@@ -1,0 +1,24 @@
+@import '/src/themes/themes.scss';
+
+.Container{
+    background-color: rgb(234, 251, 245);
+}
+.user-journey{
+    width:100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:relative;
+    flex-direction: row;
+}   
+.title {
+    padding-top: 40px;
+    text-align: center;
+    font-size: $fontsize24;
+    font-weight: bold;
+}
+
+.existing-user {
+    text-align: center;
+    font-size: $fontsize10;
+}

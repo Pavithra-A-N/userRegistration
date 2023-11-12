@@ -1,0 +1,11 @@
+{
+    "/*": {
+        "target": "https://37f32cl571.execute-api.eu-central-1.amazonaws.com",
+        "secure": false,
+        "headers": {
+            "Access-Control-Allow-Origin": "http://localhost:4200",
+            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+            "Access-Control-Allow-Headers": "X-Requested-With, Content-Type, Authorization"
+          }
+    }
+}
