@@ -23,15 +23,6 @@ export class ProgressStepsComponent {
       this.paymentDetails = Object.keys(data.paymentDetails).length > 0 && (data.paymentDetails.accountOwner !== "" && data.paymentDetails.iban !== "");
     });
   }
-  getPersonalView() {
-    this.router.navigate(['/personal-details']);
-  }
-  getAddressView() {
-    this.router.navigate(['/address-details']);
-  }
-  getPaymentView() {
-    this.router.navigate(['/payment-details']);
-  }
 
   getClassName(details: boolean){
     if(details)

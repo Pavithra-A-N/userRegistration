@@ -1,40 +1,31 @@
-<div class="personal-details-container">
-<div class ="personal-details-content">
-<p class="title"> Personal Details</p>
-<form [formGroup]="PersonalDetailsForm">
-    
-    <mat-form-field class="textbox" appearance="outline">
-        <mat-label>First Name</mat-label>
-        <input formControlName="firstName" placeholder = "Enter your First Name"matInput type=" text">
-        <mat-error *ngIf="firstName.invalid && firstName.touched">First Name is required</mat-error>
-    </mat-form-field> 
+<div [formGroup]="parentGroup">
+    <form formGroupName="personaldetails">
 
-    <mat-form-field class="textbox" appearance="outline">
-        <mat-label>Last Name</mat-label>
-        <input formControlName="lastName" placeholder="Enter your Last Name" matInput type=" text">
-        <mat-error *ngIf="lastName.invalid && lastName.touched">Last Name is required</mat-error>
-    </mat-form-field>
-    <div class="phoneNumber">
-    <mat-form-field class="textbox" id="field3" appearance="outline">
-        <mat-label>Country Code</mat-label>
-        <input formControlName="countryCode" placeholder="eg. +49" matInput type=" text">
-        <mat-error *ngIf="countryCode.invalid && countryCode.touched">Enter the valid country code</mat-error>
-    </mat-form-field>
-    
-    <mat-form-field class="textbox" id="field4" appearance="outline">
-        <mat-label> Phone Number</mat-label>
-        <input formControlName="phoneNumber" placeholder="Enter 7-11 digit Number" matInput type=" text">
-        <mat-error *ngIf="phoneNumber.invalid && phoneNumber.touched">Provide 7 to 11 digit number</mat-error>
-    </mat-form-field> 
-    </div>  
-</form>
-<!-- <app-textbox MandateField="Yes" labelName="First Name"></app-textbox>
-<mat-error *ngIf=""></mat-error>
-<app-textbox  labelName="Last Name"></app-textbox>
-<app-textbox  labelName="Country Code"></app-textbox>
-<app-textbox  labelName="Phone Number"></app-textbox> -->
-<div class="button">
-    <button  (click)="onNext()" mat-button class="mat-button">Next</button>
-</div>
-</div>
+        <mat-form-field class="textbox" appearance="outline">
+            <mat-label>First Name</mat-label>
+            <input formControlName="firstName" placeholder="First Name" matInput type=" text">
+            <mat-error *ngIf="firstName.invalid && firstName.touched">First Name is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="textbox" appearance="outline">
+            <mat-label>Last Name</mat-label>
+            <input formControlName="lastName" placeholder="Last Name" matInput type=" text">
+            <mat-error *ngIf="lastName.invalid && lastName.touched">Last Name is required</mat-error>
+        </mat-form-field>
+
+        <div class="phoneNumber">
+            <mat-form-field class="textbox" id="field3" appearance="outline">
+                <mat-label>Phone Code</mat-label>
+                <input formControlName="countryCode" placeholder="eg.+49" matInput type=" text">
+                <mat-error *ngIf="countryCode.invalid && countryCode.touched">valid country code</mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="textbox" id="field4" appearance="outline">
+                <mat-label> Phone Number</mat-label>
+                <input formControlName="phoneNumber" placeholder="9 to 11 Digit Number" matInput type=" text">
+                <mat-error *ngIf="phoneNumber.invalid && phoneNumber.touched">9 to 11 digit number</mat-error>
+            </mat-form-field>
+        </div>
+    </form>
+
 </div>

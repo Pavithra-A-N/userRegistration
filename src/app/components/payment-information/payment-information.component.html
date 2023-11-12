@@ -1,0 +1,18 @@
+<form (ngSubmit)="onSubmit()">
+    <div class="payment-details-container">
+        <div class="payment-details-content">
+            <p class="title"> Payment Details</p>
+            <app-payment-details [paymentdetails]="paymentInfo.get('paymentdetails')"
+                [parentGroup]="paymentInfo"></app-payment-details>
+            <div class="buttons">
+                <div class="align-left">
+                    <button class="button" (click)="onPrevious()" mat-button color="black">Previous</button>
+                </div>
+                <div class="align-right">
+                    <button class="button" [disabled]="paymentInfo.invalid" type="submit" mat-button
+                        color="black">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

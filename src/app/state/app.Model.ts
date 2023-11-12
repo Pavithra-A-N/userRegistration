@@ -30,13 +30,13 @@ export interface addressDetailsState{
     addressLine1:String
     addressLine2:String,
     city:String,
-    zipCode: Number
+    zipCode: String
 }
 export const addressInitialState: addressDetailsState ={
     addressLine1: "",
     addressLine2: "",
     city: "",
-    zipCode: 0
+    zipCode: ""
 }
 
 export interface paymentDetailState{

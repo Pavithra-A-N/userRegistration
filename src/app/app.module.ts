@@ -19,6 +19,9 @@ import { userRegistrationReducer } from './user-registration-state/user-registra
 import { HttpClientModule } from '@angular/common/http';
 import { SuccessScreenComponent } from './components/success-screen/success-screen.component';
 import { ProgressStepsComponent } from './components/progress-steps/progress-steps.component';
+import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
+import { AddressInformationComponent } from './components/address-information/address-information.component';
+import { PaymentInformationComponent } from './components/payment-information/payment-information.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { ProgressStepsComponent } from './components/progress-steps/progress-ste
     AddressDetailsComponent,
     PaymentDetailsComponent,
     SuccessScreenComponent,
-    ProgressStepsComponent
+    ProgressStepsComponent,
+    PersonalInformationComponent,
+    AddressInformationComponent,
+    PaymentInformationComponent
   ],
   imports: [
     BrowserModule,

@@ -1,22 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PersonalDetailsComponent } from './components/personal-details/personal-details.component';
-import { AddressDetailsComponent } from './components/address-details/address-details.component';
-import { PaymentDetailsComponent } from './components/payment-details/payment-details.component';
 import { SuccessScreenComponent } from './components/success-screen/success-screen.component';
-//import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
+import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
+import { AddressInformationComponent } from './components/address-information/address-information.component';
+import { PaymentInformationComponent } from './components/payment-information/payment-information.component';
 
 const routes: Routes = [
   {
-    component:PersonalDetailsComponent,
-    path:''
+    component:PersonalInformationComponent,
+    path:""
   },
   {
-   component:AddressDetailsComponent,
+   component:AddressInformationComponent,
    path:'address-details'
   },
   {
-    component:PaymentDetailsComponent,
+    component:PaymentInformationComponent,
     path:'payment-details'
   },
   {

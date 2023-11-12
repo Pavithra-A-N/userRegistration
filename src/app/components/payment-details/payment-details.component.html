@@ -1,28 +1,16 @@
-<div class="payment-details-container">
-    <div class="payment-details-content">
-        <p class="title"> Payment Details</p>
-        <form [formGroup]="PaymentDetailsForm">
-            <!-- <app-textbox controlName="accountNumber" labelName="Account Number"></app-textbox>
-            <app-textbox controlName="iban" labelName="IBAN"></app-textbox> -->
-            <mat-form-field class="textbox" appearance="outline">
-                <mat-label>Account Owner</mat-label>
-                <input formControlName="accountOwner" placeholder = "Account Owner"matInput type=" text">
-                <mat-error *ngIf="accountOwner.invalid && accountOwner.touched">Account Owner is required</mat-error>
-            </mat-form-field> 
+<div [formGroup]="parentGroup">
+    <form formGroupName="paymentdetails">
         
-            <mat-form-field class="textbox" appearance="outline">
-                <mat-label>IBAN</mat-label>
-                <input formControlName="iban" placeholder="Enter 11 digit Account IBAN" matInput type=" text">
-                <mat-error *ngIf="iban.invalid && iban.touched">IBAN is required</mat-error>
-            </mat-form-field>
-        </form>
-        <div class="buttons">
-            <div class="align-left">
-                <button class="button" (click)="onPrevious()" mat-button color="black">Previous</button>
-            </div>
-            <div class="align-right">
-                <button class="button" [disabled]="PaymentDetailsForm.invalid" (click)="onSubmit()" mat-button color="black">Submit</button>
-            </div>
-        </div>
-    </div>
+        <mat-form-field class="textbox" appearance="outline">
+            <mat-label>Account Owner</mat-label>
+            <input formControlName="accountOwner" placeholder="Account Owner" matInput type=" text">
+            <mat-error *ngIf="accountOwner.invalid && accountOwner.touched">Account Owner is required</mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="textbox" appearance="outline">
+            <mat-label>IBAN</mat-label>
+            <input formControlName="iban" placeholder="Enter 11 digit Account IBAN" matInput type=" text">
+            <mat-error *ngIf="iban.invalid && iban.touched">First 2 character,then Numbers required</mat-error>
+        </mat-form-field>
+    </form>
 </div>

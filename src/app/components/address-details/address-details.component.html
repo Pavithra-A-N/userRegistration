@@ -1,41 +1,27 @@
-<div class="address-details-container">
-    <div class ="address-details-content">
-    <p class="title"> Address Details</p>
-    <form [formGroup]="AddressDetailsForm">
+<div [formGroup]="parentGroup">
+    <form formGroupName="addressdetails">
         <mat-form-field class="textbox" appearance="outline">
             <mat-label>Address Line1</mat-label>
-            <input formControlName="addressLine1" placeholder = "House Number,Street Name"matInput type=" text">
-        </mat-form-field> 
-    
+            <input formControlName="addressLine1" placeholder="Apartment No,Street Name" matInput type=" text">
+            <mat-error *ngIf="addressLine1.invalid && addressLine1.touched">Maximum length 40 characters</mat-error>
+        </mat-form-field>
+
         <mat-form-field class="textbox" appearance="outline">
             <mat-label>Address Line 2</mat-label>
-            <input formControlName="addressLine2" placeholder="Locality like state/ District" matInput type=" text">
+            <input formControlName="addressLine2" placeholder="state/ District" matInput type=" text">
+            <mat-error *ngIf="addressLine2.invalid && addressLine2.touched">Maximum length 40 characters</mat-error>
         </mat-form-field>
-        
+
         <mat-form-field class="textbox" appearance="outline">
             <mat-label>City</mat-label>
             <input formControlName="city" placeholder="City" matInput type=" text">
+            <mat-error *ngIf="city.invalid && city.touched">Maximum 20 characters</mat-error>
         </mat-form-field>
-        
+
         <mat-form-field class="textbox" appearance="outline">
             <mat-label> Zip Code</mat-label>
             <input formControlName="zipCode" placeholder="Zip Code" matInput type=" text">
-        </mat-form-field> 
+            <mat-error *ngIf="zipCode.invalid && zipCode.touched">6 Digit Number</mat-error>
+        </mat-form-field>
     </form>
-    <div class="buttons">
-        <div class="align-left">
-            <button class="button"(click)="onPrevious()" mat-button color="black">Previous</button>
-        </div>
-        <div class="align-right">
-            <button class="button" [disabled]="AddressDetailsForm.invalid" (click)="onNext()" mat-button color="black">Next</button>
-        </div>
-    </div>
-    </div>
-    </div>
-<!-- <app-textbox labelName="Address Line1"></app-textbox>
-<app-textbox labelName="Address Line2"></app-textbox>
-<app-textbox labelName="City"></app-textbox>
-<app-textbox labelName="Country"></app-textbox>
-<app-textbox labelName="Zip Code"></app-textbox>
-<button class="button" mat-button color="red">previous</button>
-<button class="button" mat-button color="black">next</button> -->
+</div>

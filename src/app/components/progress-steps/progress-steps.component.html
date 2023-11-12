@@ -1,19 +1,19 @@
 <div class="stepper-wrapper">
     <div  [ngClass]="getClassName(userDetails)">
-      <div class="step-counter" (click)="getPersonalView()">
+      <div class="step-counter">
         <mat-icon>person</mat-icon>
       </div>
       <div class="step-name">Personal Details</div>
     </div>
     
     <div  [ngClass]="getClassName(addressDetails)">
-      <div class="step-counter" (click)="getAddressView()">
+      <div class="step-counter">
         <mat-icon>home</mat-icon>
       </div>
       <div class="step-name">Address Details</div>
     </div>
     <div [ngClass]="getClassName(paymentDetails)">
-      <div class="step-counter" (click)="getPaymentView()">
+      <div class="step-counter">
         <mat-icon>payment</mat-icon>
       </div>
       <div class="step-name">Payment Details</div>

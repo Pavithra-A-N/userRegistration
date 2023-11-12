@@ -1,0 +1,14 @@
+<form (ngSubmit)="onNext()">
+    <div class="personal-details-container">
+        <div class="personal-details-content">
+            <p class="title"> Personal Details</p>
+            <app-personal-details [personaldetails]="personalInfo.get('personaldetails')"
+                [parentGroup]="personalInfo"></app-personal-details>
+            <div class="button">
+                <button type="submit" [disabled]="personalInfo.invalid" class="mat-button" mat-button>Next</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+

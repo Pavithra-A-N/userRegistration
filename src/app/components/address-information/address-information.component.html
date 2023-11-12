@@ -1,0 +1,18 @@
+<form (ngSubmit)="onNext()">
+    <div class="address-details-container">
+        <div class="address-details-content">
+            <p class="title"> Address Details</p>
+            <app-address-details [addressdetails]="addressInfo.get('addressdetails')"
+                [parentGroup]="addressInfo"></app-address-details>
+            <div class="buttons">
+                <div class="align-left">
+                    <button class="button" (click)="onPrevious()" mat-button color="black">Previous</button>
+                </div>
+                <div class="align-right">
+                    <button class="button" [disabled]="addressInfo.invalid" type="submit" mat-button
+                        color="black">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

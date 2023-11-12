@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./success-screen.component.scss']
 })
 export class SuccessScreenComponent {
-  paymentId = localStorage.getItem('paymentId')
+  paymentId = "ID : "+localStorage.getItem('paymentId')?.slice(0,15)+"...."
 }
