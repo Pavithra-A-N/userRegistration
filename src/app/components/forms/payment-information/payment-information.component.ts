@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { paymentDetailState, paymentInitialState, requestInitialState, userRegRequest } from 'src/app/state/app.Model';
-import { PaymentDetailsViewService } from '../services/payment-details-view.service';
+import { PaymentDetailsViewService } from '../../viewservices/payment-details-view.service';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
-import { getPaymentDetails } from 'src/app/user-registration-state/user-registration.selector';
+import { getPaymentDetails } from 'src/app/state/user-registration-state/user-registration.selector';
 import { PaymentService } from 'src/app/services/payment.service';
-import { updatePaymentDetails } from 'src/app/user-registration-state/user-registration.action';
+import { updatePaymentDetails } from 'src/app/state/user-registration-state/user-registration.action';
+import { LoadingService } from 'src/app/services/shared/loading.service';
 
 @Component({
   selector: 'app-payment-information',
@@ -17,12 +18,14 @@ export class PaymentInformationComponent {
   paymentInfo!: FormGroup;
   paymentDetails:paymentDetailState = paymentInitialState;
   paymentData:userRegRequest =requestInitialState;
-
+  public loading$ = this.loader.loading$; //variable to show the loading screen when service call is triggered
+  
   constructor(private fb: FormBuilder, 
     private sharedPaymentService:PaymentDetailsViewService,
     private store:Store,
     private paymentService:PaymentService,
-    private router:Router){}
+    private router:Router,
+    private loader:LoadingService){}
 
     ngOnInit(){  
       this.store.select(getPaymentDetails).subscribe((data)=>{

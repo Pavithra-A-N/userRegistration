@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { getUserDataFeatures } from 'src/app/user-registration-state/user-registration.selector';
+import { getUserDataFeatures } from 'src/app/state/user-registration-state/user-registration.selector';
 
 
 @Component({

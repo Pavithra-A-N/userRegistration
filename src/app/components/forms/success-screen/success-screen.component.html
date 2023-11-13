@@ -1,0 +1,15 @@
+<div class="container">
+<div class="content">
+<div class = "success" *ngIf="!errorMessage else elseTemplate">
+    <p class="title">Successfully Registered with Wunder Mobility</p>
+    <p> {{paymentId}}</p>
+    <p class="notification">you will be notified in Email soon</p>
+    <mat-icon class="success-icon">check_circle</mat-icon>
+</div>
+<ng-template class ="error" #elseTemplate>
+    <p class="error-title">OOPS! Error Occured</p>
+    <p> Try after Sometime</p>
+    <mat-icon class="error-icon">error</mat-icon>
+</ng-template>
+<a href ="#" (click)="registerAgain()">Try Again / To Register New User</a>
+</div>

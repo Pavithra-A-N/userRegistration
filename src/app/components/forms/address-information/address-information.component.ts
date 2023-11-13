@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { addressDetailsState } from 'src/app/state/app.Model';
-import { getAddressDetails } from 'src/app/user-registration-state/user-registration.selector';
-import { AddressDetailsViewService } from '../services/address-details-view.service';
+import { getAddressDetails } from 'src/app/state/user-registration-state/user-registration.selector';
+import { AddressDetailsViewService } from '../../viewservices/address-details-view.service';
 import { Router } from '@angular/router';
-import { updateAddressDetails } from 'src/app/user-registration-state/user-registration.action';
+import { updateAddressDetails } from 'src/app/state/user-registration-state/user-registration.action';
 
 @Component({
   selector: 'app-address-information',

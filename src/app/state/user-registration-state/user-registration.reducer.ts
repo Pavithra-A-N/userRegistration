@@ -1,5 +1,5 @@
 import { createReducer, on } from "@ngrx/store";
-import { addressInitialState, paymentInitialState, personalInitialState, userRegistrationState } from "../state/app.Model";
+import { addressInitialState, paymentInitialState, personalInitialState, userRegistrationState } from "../app.Model";
 import { updateAddressDetails, updatePaymentDetails, updatePersonalDetails } from "./user-registration.action";
 
 

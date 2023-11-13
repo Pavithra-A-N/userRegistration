@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { getPaymentDetails } from '../user-registration-state/user-registration.selector';
+import { getPaymentDetails } from '../state/user-registration-state/user-registration.selector';
 import { requestInitialState, userRegRequest, userRegistrationState } from '../state/app.Model';
 import { Router } from '@angular/router';
 
@@ -18,7 +18,8 @@ export class PaymentService {
       localStorage.setItem("paymentId", res.paymentDataId);
       this.router.navigate(['/success-screen'])
       }, error => {
-        console.log(error);
+        localStorage.setItem("errorMessage", error);
+        this.router.navigate(['/success-screen'])
       })
   }
 }

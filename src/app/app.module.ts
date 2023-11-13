@@ -8,21 +8,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UserRegistrationComponent } from './components/user-registration/user-registration.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { PersonalDetailsComponent } from './components/personal-details/personal-details.component';
-import { AddressDetailsComponent } from './components/address-details/address-details.component';
-import { PaymentDetailsComponent } from './components/payment-details/payment-details.component';
+import { PersonalDetailsComponent } from './components/sharedForms/personal-details/personal-details.component';
+import { AddressDetailsComponent } from './components/sharedForms/address-details/address-details.component';
+import { PaymentDetailsComponent } from './components/sharedForms/payment-details/payment-details.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { EffectsModule } from '@ngrx/effects';
-import { userRegistrationReducer } from './user-registration-state/user-registration.reducer';
-import { HttpClientModule } from '@angular/common/http';
-import { SuccessScreenComponent } from './components/success-screen/success-screen.component';
+import { userRegistrationReducer } from './state/user-registration-state/user-registration.reducer';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { SuccessScreenComponent } from './components/forms/success-screen/success-screen.component';
 import { ProgressStepsComponent } from './components/progress-steps/progress-steps.component';
-import { PersonalInformationComponent } from './components/personal-information/personal-information.component';
-import { AddressInformationComponent } from './components/address-information/address-information.component';
-import { PaymentInformationComponent } from './components/payment-information/payment-information.component';
-
+import { PersonalInformationComponent } from './components/forms/personal-information/personal-information.component';
+import { AddressInformationComponent } from './components/forms/address-information/address-information.component';
+import { PaymentInformationComponent } from './components/forms/payment-information/payment-information.component';
+import { NetworkInterceptor } from './services/shared/network.interceptor';
+import { MatProgressSpinnerModule} from '@angular/material/progress-spinner'
 
 @NgModule({
   declarations: [
@@ -46,13 +47,19 @@ import { PaymentInformationComponent } from './components/payment-information/pa
     BrowserAnimationsModule,
     MatButtonModule,
     FormsModule,
+    MatProgressSpinnerModule,
     ReactiveFormsModule,
     HttpClientModule,
     StoreModule.forRoot({userRegistrationDetails : userRegistrationReducer}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
     EffectsModule.forRoot([])
   ],
-  providers: [],
+  providers: [{
+      provide: HTTP_INTERCEPTORS,
+      useClass: NetworkInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

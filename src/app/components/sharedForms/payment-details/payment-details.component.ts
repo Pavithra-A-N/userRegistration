@@ -4,8 +4,8 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { PaymentService } from 'src/app/services/payment.service';
 import { paymentDataState, paymentInitialState, requestInitialState, userRegRequest } from 'src/app/state/app.Model';
-import { updatePaymentDetails } from 'src/app/user-registration-state/user-registration.action';
-import { getPaymentDetails } from 'src/app/user-registration-state/user-registration.selector';
+import { updatePaymentDetails } from 'src/app/state/user-registration-state/user-registration.action';
+import { getPaymentDetails } from 'src/app/state/user-registration-state/user-registration.selector';
 
 @Component({
   selector: 'app-payment-details',

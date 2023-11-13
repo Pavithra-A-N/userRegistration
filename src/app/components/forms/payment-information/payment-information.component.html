@@ -1,3 +1,7 @@
+<div class="loader-overlay" *ngIf="loading$ | async">
+    <mat-progress-spinner class="white-spinner" mode="indeterminate"></mat-progress-spinner>
+</div>
+
 <form (ngSubmit)="onSubmit()">
     <div class="payment-details-container">
         <div class="payment-details-content">

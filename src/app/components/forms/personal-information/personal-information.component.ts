@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { PersonalDetailsViewService } from '../services/personal-details-view.service';
+import { PersonalDetailsViewService } from '../../viewservices/personal-details-view.service';
 import { personalDetailsState } from 'src/app/state/app.Model';
 import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
-import { updatePersonalDetails } from 'src/app/user-registration-state/user-registration.action';
-import { getUserDetails } from 'src/app/user-registration-state/user-registration.selector';
+import { updatePersonalDetails } from 'src/app/state/user-registration-state/user-registration.action';
+import { getUserDetails } from 'src/app/state/user-registration-state/user-registration.selector';
 
 @Component({
   selector: 'app-personal-information',
