@@ -8,7 +8,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ## Possible Optimisation
 1. Moving all the imports of Angular material to separate file (could have done in production env)
-2. CSS files can be more optimised with seggregations
+2. SCSS files can be more optimised with seggregations
 3. Add test specification we need to do core testing via angular
 
 ## Things that can be done better
