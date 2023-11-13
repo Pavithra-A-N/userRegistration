@@ -12,7 +12,7 @@ export class AddressDetailsViewService {
   sharedAddressView(defaultData:addressDetailsState){
     const AddressDetailsForm = this.fb.group({
       addressLine1: [defaultData.addressLine1, Validators.maxLength(40)],
-      addressLine2:[defaultData.addressLine1, Validators.maxLength(40)],
+      addressLine2:[defaultData.addressLine2, Validators.maxLength(40)],
       city:[defaultData.city,[Validators.required,Validators.maxLength(20)]],
       zipCode:[defaultData.zipCode,Validators.pattern(/^\d{6}$/)]
      })
