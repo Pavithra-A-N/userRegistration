@@ -6,22 +6,24 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Possible Optimisation
+1. Moving all the imports of Angular material to separate file (could have done in production env)
+2. CSS files can be more optimised with seggregations
+3. Add test specification we need to do core testing via angular
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Things that can be done better
+1. More styling in scss can be done but kept simple
 
-## Build
+## Used Technologies
+1. NgRx Store
+2. Angular Material
+3. Typescript
+4. SCSS
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Problems faced
+1. CORS issue , Tried multiple ways to solve it. (Note: Thank you on this , it was a good learning time)
+2. Intially thought of creating reusable widget level in forms 
+   Example: Since every forms has only textbox , I thought of customizing at formControl level which i couldn't figure a way yet.
+   Instead created a form level reusable components
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Awaiting on your comments to learn more.
